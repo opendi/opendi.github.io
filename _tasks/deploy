@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rm -rf _site
+jekyll build
+
+aws s3 sync _site/ s3://www.opendi.com --delete --profile opendi-deploy --region eu-west-1 --acl public-read
