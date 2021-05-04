@@ -1,84 +1,213 @@
-/*Copyright (c) 2007, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.net/yui/license.txtversion: 2.4.1*/
-html{color:#000;background:#303e4b;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{font-family:arial,verdana,sans-serif;margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}/* to preserve line-height and selector appearance */sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}/*because legend doesn't inherit in IE */legend{color:#000;}
-/*clearfix */.cf:after,header:after{content:".";display:block;clear:both;height:0;visibility:hidden;}.cf,header{display:inline-block;}/* Hide from IE Mac \*/.cf,header{display:block;}/* End hide from IE Mac */
+/* reset */
+html {
+    box-sizing: border-box;
+}
 
-body{background:#303e4b;}
-a,h1,h2,h3,span,li,footer p{font-family:'Raleway',arial,sans-serif;}
+ul {
+    padding: 0;
+}
 
-#wrapper{width:960px;background:#f2f2f2;margin:20px auto;padding:0 0 20px;
--moz-box-shadow: 1px 1px 30px #000;-webkit-box-shadow: 1px 1px 30px #000;box-shadow:1px 1px 30px #000;}
+li {
+    list-style: none;
+}
 
-header,footer,aside,nav,article,section{display:block;}
+h2 {
+    font-size: 1.2em;
+}
 
+address {
+    font-style: normal;
+}
 
-header a{text-decoration:none;}
-header h1{display:block;width:600px;font-size:40px;text-shadow:1px 1px 3px #000;float:left;}
-header h1 a{display:block;color:#303E4B;padding:10px;}
-header h1 a:hover{color:#fff;}
-header h1 a img{padding:10px;float:left;}
-header h1 a span{display:block;float:left;margin:18px 0 0 10px;}
+a {
+    color: #0670c6;
+    text-decoration: none;
+}
 
-header nav{float:right;margin:40px 0 0 0;}
-header nav li{list-style:none;display:inline;}
-header nav li a{display:block;float:left;padding:5px 10px;margin:0 10px 0 0;color:#303E4B;}
-header nav li a:hover,header nav li a.active{background:#d93240;color:#f2f2f2;}
+a:hover {
+    text-decoration: underline;
+}
 
+/* fonts */
+@font-face {
+    font-family: "Swiss";
+    src: url("http://static.opendi.com/ng/fonts/swiss_bold_italic-webfont.eot");
+    src: url("http://static.opendi.com/ng/fonts/swiss_bold_italic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold_italic-webfont.woff2") format("woff2"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold_italic-webfont.woff") format("woff"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold_italic-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
 
-.hpTeaser{height:275px;width:100%;background:url(bg-blau.png);margin:10px 0 20px 0;float:right;color:#fff;}
-.hpTeaser img{margin:15px 0 0 70px}
-.hpTeaser article{margin:40px 0 0 0;width:410px;float:right;}
-.hpTeaser h1{font-size:20px;}
-.hpTeaser h2{font-size:48px;}
+}
 
-.hpL,.hpC,.hpR{width:300px;float:left;display:block;margin:0 10px 0 10px;}
-.hpL h1,.hpC h1,.hpR h1{color:#d93240;font-size:18px;padding:7px 0 5px;}
-.hpL p,.hpC p,.hpR p{font-family:'Raleway',arial,sans-serif;font-size:13px;}
+@font-face {
+    font-family: "Swiss";
+    src: url("http://static.opendi.com/ng/fonts/swiss_bold-webfont.eot");
+    src: url("http://static.opendi.com/ng/fonts/swiss_bold-webfont.eot?#iefix") format("embedded-opentype"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold-webfont.woff2") format("woff2"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold-webfont.woff") format("woff"),
+         url("http://static.opendi.com/ng/fonts/swiss_bold-webfont.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
 
-.hpContact{clear:both;padding-top:30px;}
-.hpContact article h1{font-size:26px;padding:0 0 8px;}
-.map{margin:0 0 0 10px;float:left;width:620px;}
-.hpAdr{margin:0 0 0 20px;width:300px;float:left;}
+@font-face {
+    font-family: "Swiss";
+    src: url("http://static.opendi.com/ng/fonts/swiss_italic-webfont.eot");
+    src: url("http://static.opendi.com/ng/fonts/swiss_italic-webfont.eot?#iefix") format("embedded-opentype"),
+         url("http://static.opendi.com/ng/fonts/swiss_italic-webfont.woff2") format("woff2"),
+         url("http://static.opendi.com/ng/fonts/swiss_italic-webfont.woff") format("woff"),
+         url("http://static.opendi.com/ng/fonts/swiss_italic-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
 
-.vcard{font-size:17px;}
-.fn,.street-address,.country,.emH{display:block;}
-.country{padding-bottom:14px;}
-.emH{font-style:normal;padding-top:14px;}
-.emH a{color:#d93240;}
-.emH a:hover{text-decoration:none;}
+@font-face {
+    font-family: "Swiss";
+    src: url("http://static.opendi.com/ng/fonts/swiss_roman-webfont.eot");
+    src: url("http://static.opendi.com/ng/fonts/swiss_roman-webfont.eot?#iefix") format("embedded-opentype"),
+         url("http://static.opendi.com/ng/fonts/swiss_roman-webfont.woff2") format("woff2"),
+         url("http://static.opendi.com/ng/fonts/swiss_roman-webfont.woff") format("woff"),
+         url("http://static.opendi.com/ng/fonts/swiss_roman-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
-footer{margin-top:20px;clear:both;width:960px;}
-footer h1{width:229px;display:block;float:left;}
-footer h1 img{padding:5px 5px 5px 15px;float:left;}
-footer h1 span{display:block;float:left;margin:10px 0 0 10px;}
-footer div{float:left;width:300px;border-left:1px solid #928f86;padding:3px 0 3px 20px;}
-footer p{font-size:13px;}
-footer a{color:#d93240;}
-footer a:hover{text-decoration:none;}
+/* general */
+body {
+    background: url(http://static.opendi.com/ng/images/bg-texture.jpg) #fff;
+    font-family: "Swiss", Arial;
+    font-weight: 400;
+    font-size: 14px;
+}
 
+.page-wrapper {
+    max-width: 970px;
+    margin: auto;
+}
 
+.box {
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 16%), 0 0 2px 0 rgb(0 0 0 / 12%);
+    background-color: #fff;
+}
 
-.projects{padding:30px 0 0 0px;clear:both;}
-.projects h3,.projects a{font-family:arial,verdana,sans-serif !important;}
-.projects ul{margin:0 0 13px 12px;font-size:13px;}
-.eu{float:left;margin:0 20px 0 0;}
-.projects li{display:inline}
-.projects h3{font-size:18px;}
-.projects a{color:#d93240; font-size:14px;padding:0 5px 0 0;}
-.projects a:hover{text-decoration:none;}
+/* header */
+header {
+    margin-bottom: 10px;
+}
 
-.application h1,.application h2{color:#36c;}
-.application ul{margin:0 0 13px 16px;}
-.application li{font-family:arial,verdana,sans-serif;font-size:13px;line-height:140%;color:#333;}
+.header-logo,
+.header-text {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-.contact{float:right;width:300px;margin-right:10px;}
-.contact .hpAdr{margin:30px 0 0 0;}
-.contact .hpAdr h1{font-size:24px;}
-.cSubpage{margin:0 0 30px 10px;width:600px;float:left;}
-.cSubpage h1{font-size:26px;margin-bottom:13px;}
-.cSubpage p{font-family:arial,verdana,sans-serif;font-size:13px;line-height:125%;padding:0 0 13px;color:#333;}
+.header-text {
+    font-size: 1.5em;
+    letter-spacing: -1px;
+    margin: -4px 0 0 4px;
+}
 
-.application{padding:30px;}
-	.application p{font-size:16px;line-height:135%;}
-	.application h1, .application strong, .application a{font-family:sans-serif;}
-	.footerdiv{padding:10px 30px;clear:both;}
-	.footerdiv p{font-size:13px;color:#a8a8a8}
+.header-text .black {
+    font-weight: 700;
+    color: #333;
+}
+
+.header-text .blue {
+    margin-left: -4px;
+    color: #0670c6;
+}
+
+.header-text .small {
+    font-size: 0.6em;
+    color: #999;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+/* hero image and text */
+.hero-img,
+.hero-text {
+    display: block;
+}
+
+.hero-text {
+    font-size: 40px;
+    color: #333;
+    font-weight: 300;
+}
+
+.hero-text h1 {
+    font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .hero-img,
+    .hero-text {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .hero-img {
+        margin-left: 40px;
+    }
+    
+    .hero-text {
+        margin-left: 60px; 
+    }
+}
+
+/* teaser */
+.teaser {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .teaser {
+        flex-direction: row;
+    }
+    
+    .teaser-item {
+        width: 32%;
+    }
+    
+    .teaser-item img {
+        width: 100%;
+    }
+}
+
+/* opendi links */
+.links ul {
+    columns: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .links ul {
+        columns: 4;
+    }
+}
+
+.links li {
+    margin-bottom: 5px;
+}
+
+/* footer */
+footer {
+    margin: 10px 0;
+    font-size: 0.75em;
+    text-align: center;
+}
+
+footer,
+footer a {
+    color: #999;
+}
