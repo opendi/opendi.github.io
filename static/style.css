@@ -169,27 +169,6 @@ header {
     }
 }
 
-/* teaser */
-.teaser {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-@media screen and (min-width: 768px) {
-    .teaser {
-        flex-direction: row;
-    }
-    
-    .teaser-item {
-        width: 32%;
-    }
-    
-    .teaser-item img {
-        width: 100%;
-    }
-}
-
 /* opendi links */
 .links ul {
     columns: 1;
